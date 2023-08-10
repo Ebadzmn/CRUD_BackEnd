@@ -37,6 +37,10 @@ readdirSync("./src/routes").map(r => app.use("/api/v1", require(`./src/routes/${
 // server
 const port = process.env.PORT || 8000;
 
+app.get('/', (req, res) => {
+    res.send('Express JS on Vercel')
+})
+
 // Connect to DB and start server
 mongoose
     .connect(process.env.DATABASE)
